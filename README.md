@@ -6,14 +6,64 @@ A modern React-based web tool that converts Markdown to Medium-compatible HTML. 
 
 - **Live Preview**: See your Medium-formatted content as you type
 - **One-Click Copy**: Copy to clipboard button for easy pasting into Medium
+- **Comprehensive Markdown Support**: All standard markdown elements work perfectly
 - **Responsive Design**: Works seamlessly on desktop, tablet, and mobile devices
 - **Medium-Style Typography**: Preview matches Medium's actual styling
+- **Optimized HTML Output**: Custom renderer produces clean, Medium-compatible HTML
 - **Modern Stack**: Built with React 18, Material-UI v5, and Redux Toolkit
 - **Auto-Deploy**: Automatic deployment to GitHub Pages via GitHub Actions
 
+## Supported Markdown Elements
+
+This tool supports all standard markdown features with optimized rendering for Medium:
+
+### Text Formatting
+- **Headings** (H1-H6) with proper spacing
+- **Bold** and *italic* text
+- `Inline code` with proper styling
+- ~~Strikethrough~~ text
+
+### Lists
+- Ordered lists (numbered) with correct numbering
+- Unordered lists (bullet points)
+- Nested lists (mixed ordered/unordered)
+- Task lists with checkboxes
+
+### Code Blocks
+- Fenced code blocks with language syntax
+- Proper indentation preservation
+- HTML entity escaping for code safety
+
+### Other Elements
+- Links with optional titles
+- Images with alt text
+- Blockquotes with Medium-style formatting
+- Horizontal rules
+- Tables (with limited Medium support)
+- Line breaks
+
 ## Why This Tool?
 
-While Medium has an import function, it often fails with formatting. This tool ensures your markdown is converted with proper Medium-compatible formatting every time.
+While Medium has an import function, it often fails with formatting, especially for:
+- **Lists**: Incorrect numbering, lost nesting, phantom blank lines
+- **Code blocks**: Lost indentation and spacing
+- **Paragraphs**: Improper spacing between elements
+
+This tool uses a custom renderer specifically optimized for Medium's HTML requirements, ensuring your markdown pastes correctly every time with proper formatting for all elements.
+
+## How to Use
+
+1. **Write or paste your markdown** in the left panel
+2. **Preview the formatted result** in the right panel (styled like Medium)
+3. **Click "Copy to Clipboard"** button
+4. **Paste into Medium's editor** - all formatting will be preserved!
+
+### Tips for Best Results
+
+- Use standard markdown syntax for all elements
+- For code blocks, specify the language for better highlighting (e.g., ```javascript)
+- Keep nested lists simple (Medium has known issues with deeply nested structures)
+- Test your content in the preview panel before copying
 
 ## Live Demo
 
@@ -52,12 +102,10 @@ This project includes a GitHub Actions workflow for automatic deployment to GitH
    - Go to your repository settings
    - Navigate to "Pages" section
    - Under "Build and deployment", select "GitHub Actions" as the source
-
 2. **Push to master branch**:
    ```bash
    git push origin master
    ```
-
 3. The GitHub Action will automatically:
    - Install dependencies
    - Build the project
