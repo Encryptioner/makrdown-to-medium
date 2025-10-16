@@ -1,18 +1,18 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import AppBar from 'material-ui/AppBar';
+import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
 
-const Bar = props => {
+const Bar = () => {
   return (
-    <div>
-      <AppBar
-        title="Markdown to Medium"
-        showMenuIconButton={false}
-        />
-    </div>
+    <AppBar position="static">
+      <Toolbar>
+        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          Markdown to Medium
+        </Typography>
+      </Toolbar>
+    </AppBar>
   );
 };
 
-export default connect(state => ({
-  menuactive: state.menuactive
-}))(Bar);
+export default Bar;

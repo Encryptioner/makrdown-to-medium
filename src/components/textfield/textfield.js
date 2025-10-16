@@ -1,14 +1,22 @@
 import React from 'react';
 import './textfield.css';
-import { connect } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { setContent } from '../../state.js';
 
-const TextField = props => {
-  let content;
-  return <textarea
-    className="textfield"
-    ref={node => { content = node; }}
-    onChange={e => { props.dispatch(setContent(content.value)); }}></textarea>;
+const TextField = () => {
+  const dispatch = useDispatch();
+
+  const handleChange = (e) => {
+    dispatch(setContent(e.target.value));
+  };
+
+  return (
+    <textarea
+      className="textfield"
+      onChange={handleChange}
+      placeholder="Enter your markdown here..."
+    />
+  );
 };
 
-export default connect()(TextField);
+export default TextField;

@@ -3,29 +3,72 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
-    <!--
-      Notice the use of %PUBLIC_URL% in the tag above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
+    <!-- Primary Meta Tags -->
+    <title>Markdown to Medium - Convert Markdown to Medium-Compatible HTML</title>
+    <meta name="title" content="Markdown to Medium - Convert Markdown to Medium-Compatible HTML">
+    <meta name="description" content="Free online tool to convert Markdown to Medium-compatible HTML. Paste your markdown, get perfectly formatted HTML, and copy to Medium with one click. Responsive, fast, and easy to use.">
+    <meta name="keywords" content="markdown, medium, converter, html, markdown to medium, medium editor, blog, writing tool, markdown converter, medium formatter">
+    <meta name="author" content="Markdown to Medium">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://github.com/markdown-to-medium/">
+    <meta property="og:title" content="Markdown to Medium - Convert Markdown to Medium-Compatible HTML">
+    <meta property="og:description" content="Free online tool to convert Markdown to Medium-compatible HTML. Paste your markdown, get perfectly formatted HTML, and copy to Medium with one click.">
+    <meta property="og:image" content="%PUBLIC_URL%/og-image.png">
+    <meta property="og:site_name" content="Markdown to Medium">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://github.com/markdown-to-medium/">
+    <meta property="twitter:title" content="Markdown to Medium - Convert Markdown to Medium-Compatible HTML">
+    <meta property="twitter:description" content="Free online tool to convert Markdown to Medium-compatible HTML. Paste your markdown, get perfectly formatted HTML, and copy to Medium with one click.">
+    <meta property="twitter:image" content="%PUBLIC_URL%/og-image.png">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="%PUBLIC_URL%/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="%PUBLIC_URL%/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="%PUBLIC_URL%/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/apple-touch-icon.png">
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#00ab6c">
+    <meta name="msapplication-TileColor" content="#00ab6c">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://github.com/markdown-to-medium/">
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Markdown to Medium",
+      "description": "Free online tool to convert Markdown to Medium-compatible HTML",
+      "url": "https://github.com/markdown-to-medium/",
+      "applicationCategory": "UtilityApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "browserRequirements": "Requires JavaScript. Requires HTML5.",
+      "softwareVersion": "2.0.0",
+      "author": {
+        "@type": "Organization",
+        "name": "Markdown to Medium"
+      }
+    }
+    </script>
   </head>
   <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start`.
-      To create a production bundle, use `npm run build`.
-    -->
   </body>
 </html>

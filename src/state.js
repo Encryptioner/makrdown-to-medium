@@ -1,22 +1,19 @@
-import { createStore } from 'redux';
+import { configureStore, createSlice } from '@reduxjs/toolkit';
 
-export const SET_CONTENT = 'SET_CONTENT';
-
-export function setContent(content) {
-  return { type: SET_CONTENT, content: content };
-}
-
-export function reducer(state = {
+const contentSlice = createSlice({
+  name: 'content',
+  initialState: {
     content: '',
-  }, action) {
-  switch (action.type) {
-    case SET_CONTENT:
-      return Object.assign({}, state, {
-        content: action.content
-      });
-    default:
-      return state
-  }
-}
+  },
+  reducers: {
+    setContent: (state, action) => {
+      state.content = action.payload;
+    },
+  },
+});
 
-export const store = createStore(reducer);
+export const { setContent } = contentSlice.actions;
+
+export const store = configureStore({
+  reducer: contentSlice.reducer,
+});

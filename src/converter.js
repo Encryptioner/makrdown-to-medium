@@ -1,20 +1,14 @@
-import marked from 'marked';
-
-let renderer = new marked.Renderer();
+import { marked } from 'marked';
 
 marked.setOptions({
-  renderer: renderer,
   gfm: true,
-  tables: true,
   breaks: false,
   pedantic: false,
-  sanitize: true,
   smartLists: true,
-  smartypants: false
 });
 
 function converter(input) {
-  return marked(input.content);
+  return marked.parse(input.content || '');
 }
 
 export default converter;

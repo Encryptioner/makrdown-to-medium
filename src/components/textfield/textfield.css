@@ -1,8 +1,24 @@
 .textfield {
   flex: 1;
   width: 100%;
-  border-top: none;
+  border: none;
   font-size: 16px;
   background: transparent;
-  font-family: monospace;
+  font-family: 'Courier New', Courier, monospace;
+  padding: 15px;
+  resize: none;
+  outline: none;
+  line-height: 1.6;
+}
+
+.textfield:focus {
+  outline: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .textfield {
+    font-size: 14px;
+    padding: 10px;
+  }
 }

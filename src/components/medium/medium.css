@@ -1,5 +1,95 @@
+.medium-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.medium-copy-button-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
 .medium {
-  overflow: scroll;
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
   word-wrap: break-word;
-  word-break: break-all;
+  word-break: break-word;
+  padding: 20px;
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  line-height: 1.6;
+}
+
+/* Medium-like styling for rendered content */
+.medium h1,
+.medium h2,
+.medium h3,
+.medium h4,
+.medium h5,
+.medium h6 {
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.medium p {
+  margin-bottom: 1.5em;
+}
+
+.medium code {
+  background-color: rgba(0, 0, 0, 0.05);
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9em;
+}
+
+.medium pre {
+  background-color: rgba(0, 0, 0, 0.05);
+  padding: 16px;
+  border-radius: 4px;
+  overflow-x: auto;
+  margin-bottom: 1.5em;
+}
+
+.medium pre code {
+  background-color: transparent;
+  padding: 0;
+}
+
+.medium blockquote {
+  border-left: 3px solid #00ab6c;
+  padding-left: 20px;
+  margin-left: 0;
+  color: #555;
+  font-style: italic;
+}
+
+.medium img {
+  max-width: 100%;
+  height: auto;
+}
+
+.medium a {
+  color: #00ab6c;
+  text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .medium-container {
+    padding: 10px;
+  }
+
+  .medium {
+    padding: 15px;
+    font-size: 18px;
+  }
 }

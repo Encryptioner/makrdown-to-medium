@@ -4,20 +4,23 @@
   flex-direction: column;
   width: 50%;
   font-size: 21px;
+  min-width: 0;
 }
 
 .halfpage__header {
-  padding: 10px;
+  padding: 10px 15px;
   text-transform: uppercase;
   color: #777;
   font-weight: bold;
   font-size: 16px;
   line-height: 16px;
+  border-bottom: 1px solid #e0e0e0;
 }
 
 .halfpage__subheader {
   font-size: 12px;
   color: #999;
+  text-transform: none;
 }
 
 .halfpage__content {
@@ -25,6 +28,13 @@
   flex: 1;
   display: flex;
   position: relative;
-  bottom: 0;
-  top: 0;
+  overflow: auto;
+}
+
+/* Responsive design for tablets and mobile */
+@media (max-width: 768px) {
+  .halfpage {
+    width: 100%;
+    min-height: 50vh;
+  }
 }
