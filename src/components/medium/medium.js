@@ -31,6 +31,11 @@ const Medium = () => {
       setCopied(true);
       setSnackbarOpen(true);
 
+      // Track copy event in Google Analytics
+      if (window.trackCopyToClipboard) {
+        window.trackCopyToClipboard(html.length);
+      }
+
       setTimeout(() => {
         setCopied(false);
       }, 2000);
