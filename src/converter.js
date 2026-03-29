@@ -1,4 +1,5 @@
 import { marked, Renderer } from 'marked';
+import { trackEvent, sanitizeError } from 'services/analytics';
 
 /**
  * Custom renderer for Medium-compatible HTML output
@@ -219,6 +220,14 @@ function converter(input) {
     return html;
   } catch (error) {
     console.error('Markdown conversion error:', error);
+    trackEvent({
+      name: 'error_occurred',
+      params: {
+        category: 'converter',
+        action: 'markdown_parse',
+        error: sanitizeError(error instanceof Error ? error.message : String(error)),
+      },
+    });
     return '<p>Error converting markdown. Please check your syntax.</p>';
   }
 }

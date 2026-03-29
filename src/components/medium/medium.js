@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './medium.css';
 import { useSelector } from 'react-redux';
 import converter from '../../converter.js';
+import { trackEvent, sanitizeError } from 'services/analytics';
 import Button from '@mui/material/Button';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import CheckIcon from '@mui/icons-material/Check';
@@ -31,10 +32,7 @@ const Medium = () => {
       setCopied(true);
       setSnackbarOpen(true);
 
-      // Track copy event in Google Analytics
-      if (window.trackCopyToClipboard) {
-        window.trackCopyToClipboard(html.length);
-      }
+      trackEvent({ name: 'html_copied', params: { html_length: html.length } });
 
       setTimeout(() => {
         setCopied(false);
@@ -42,6 +40,11 @@ const Medium = () => {
     } catch (err) {
       console.error('Failed to copy:', err);
       alert('Failed to copy to clipboard. Please try selecting and copying manually.');
+
+      trackEvent({
+        name: 'copy_failed',
+        params: { error: sanitizeError(err instanceof Error ? err.message : String(err)) },
+      });
     }
   };
 
